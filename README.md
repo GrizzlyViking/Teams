@@ -61,3 +61,4 @@ added helper endpoint `/users/{user_id}/teams`
 #### Comments
 Because I used almost entirely Lumens built in functions, Eloquent etc... then there was not any of those functions to test
 so instead i did unit-testing on the RESTFUL API endpoints.
+If there had been more time then I could have provided specific endpoints for the relationships between teams and users.
