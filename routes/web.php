@@ -11,6 +11,15 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/teams', 'TeamController@index');
+$router->post('/teams', 'TeamController@store');
+$router->get('/teams/{team_id}', 'TeamController@show');
+$router->put('/teams/{team_id}', 'TeamController@update');
+$router->delete('/teams/{team_id}', 'TeamController@destroy');
+
+$router->get('/users', 'UserController@index');
+$router->post('/users', 'UserController@store');
+$router->get('/users/{user_id}/teams', 'UserController@teams');
+$router->get('/users/{user_id}', 'UserController@show');
+$router->put('/users/{user_id}', 'UserController@update');
+$router->delete('/users/{user_id}', 'UserController@destroy');

@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        factory(App\User::class, 50)->create();
+
+        factory(App\Team::class, 10)->create();
+
+        App\Role::insert([
+            ['id' => 1, 'title' => 'developer'],
+            ['id' => 2, 'title' => 'junior developer'],
+            ['id' => 3, 'title' => 'quality assurance'],
+            ['id' => 4, 'title' => 'project manager'],
+            ['id' => 5, 'title' => 'team leader']
+        ]);
     }
 }
