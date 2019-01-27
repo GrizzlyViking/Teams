@@ -12,7 +12,7 @@ class User extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'team_owner_id'
+        'name', 'email', 'role_id'
     ];
 
     public function teams()
