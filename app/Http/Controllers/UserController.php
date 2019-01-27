@@ -107,4 +107,16 @@ class UserController extends Controller
             return response()->json('User with id '.$user_id.' not found.', 404);
         }
     }
+
+    public function teams($user_id)
+    {
+        try {
+            /** @var User $user */
+            $user = User::findOrFail($user_id);
+
+            return response()->json($user->teams->toArray(), 200, [], JSON_UNESCAPED_UNICODE);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json('User with id '.$user_id.' not found.', 404);
+        }
+    }
 }
